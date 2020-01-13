@@ -1,0 +1,92 @@
+
+
+
+<h1>Add Doctor</h1>
+
+
+<div class="col-md-3"></div>
+
+
+<div class="row">
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">FirstName</label>
+      <input [(ngModel)]="firstname" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Lastname</label>
+      <input [(ngModel)]="lastname" type="text" class="form-control">        
+  </div>
+</div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Phone no</label>
+      <input [(ngModel)]="phoneNo" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Degree</label>
+      <input [(ngModel)]="degree" type="text" class="form-control">
+
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+  <div class="col-md-3">
+    <button (click)="onadd()" class="btn btn-success">Add</button>
+    <a style="margin-left: 10px;" routerLink="/login/dashboard/drs" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<h1>Add Doctor</h1>
+
+<form >
+
+       FirstName
+       <input [(ngModel)]="firstname" type="text" name="firstname"> <br> <br>
+       LastName
+       <input [(ngModel)]="lastname" type="text" name="lastname"> <br> <br>
+       Phone No
+       <input [(ngModel)]="phoneNo" type="text" name="phoneNo"> <br> <br>
+       Degree
+       <input [(ngModel)]="degree" type="text" name="degree"> <br> <br>
+
+       
+
+
+       <button (click) = "onadd()">Add</button>  <button (click)="back()">Cancel</button>
+
+       
+       
+</form>  
+ -->

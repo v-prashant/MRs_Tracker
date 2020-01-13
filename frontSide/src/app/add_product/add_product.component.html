@@ -1,0 +1,174 @@
+
+
+
+
+<h1>Add Product</h1>
+
+
+<div class="col-md-3"></div>
+
+
+<div class="row">
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input [(ngModel)]="name" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Price</label>
+      <input [(ngModel)]="price" type="text" class="form-control">        
+  </div>
+</div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Discount</label>
+      <input [(ngModel)]="discount" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Price with Discount</label>
+      <input [(ngModel)]="priceWithDiscount" type="text" class="form-control">
+
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Does in MG</label>
+      <input [(ngModel)]="doseInMG" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">MGF Date</label>
+      <input [(ngModel)]="mgfdate" type="date" class="form-control">
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Expire Date</label>
+      <input [(ngModel)]="expiredate" type="date" class="form-control">
+    </div>
+  </div>
+
+
+  
+  <div class="col-md-3">
+      <div class="form-group">
+        <label for="">Add Image</label>
+        <input (change)="onSelectImage($event)" type="file" class="form-control">
+      </div>
+    </div>
+
+</div>
+
+
+
+<div class="col-md-3"></div>
+<div class="row">
+  <div class="col-md-3">
+
+    <div class="form-group">
+      <label for="">Category</label>
+      <select [(ngModel)]="categoryid" class="form-control">
+        <option *ngFor="let c of cat" [value]="c.id">{{c.title}}</option>
+
+      </select>
+    </div>
+  </div>
+
+
+  
+
+</div>
+
+
+
+
+<div class="col-md-3"></div>
+<div class="row">
+ 
+    <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Description</label>
+          <textarea [(ngModel)]="description" class="form-control" rows="4"></textarea>
+        </div>
+      </div>
+  
+
+</div>
+
+
+<div class="col-md-3"></div>
+
+<div class="row">
+  <div class="col-md-3">
+    <button (click)="addProduct()" class="btn btn-success">Add</button>
+    <a style="margin-left: 10px;" routerLink="/login/dashboard/product" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
+
+<!-- 
+
+
+<h1>Add Product</h1>
+
+<form >
+
+       ProductName
+       <input [(ngModel)]="name" type="text" name="name"> <br> <br>
+       Price
+       <input [(ngModel)]="price" type="text" name="price"> <br> <br>
+       Discount
+       <input [(ngModel)]="discount" type="text" name="discount"> <br> <br>
+       PriceWithDiscount
+       <input [(ngModel)]="priceWithDiscount" type="text" name="priceWithDiscount"> <br> <br>
+       DoseInMg
+       <input [(ngModel)]="doseInMG" type="text" name="doseInMG"> <br> <br>
+       MfgDate
+       <input [(ngModel)]="mgfdate" type="text" name="mgfdate"> <br> <br>
+       ExpireDate
+       <input [(ngModel)]="expiredate" type="text" name="expiredate"> <br> <br>
+       Description
+       <input [(ngModel)]="description" type="text" name="description"> <br> <br>
+
+       
+
+
+       <button (click)="addProduct()">Add</button>  <button (click)="back()">Cancel</button>
+
+       
+       
+</form>  
+ -->
