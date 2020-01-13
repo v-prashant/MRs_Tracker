@@ -61,10 +61,10 @@ router.get('/edit_product/:id', (request, response) => {
 
 router.put('/edit_product/:id',(request,response)=>{
     const {id} = request.params
-    const {name,price,discount,priceWithDiscount,doseInMG,mgfdate,expiredate,description} = request.body
+    const {name,price,discount,priceWithDiscount,doseInMG,mgfdate,expiredate,description,categoryid} = request.body
     const connection = db.connect1()
 
-    const statement = `update products set name='${name}',price='${price}',discount='${discount}',priceWithDiscount='${priceWithDiscount}',doseInMG='${doseInMG}',mgfdate='${mgfdate}',expiredate='${expiredate}',description='${description}' where id =${id}`
+    const statement = `update products set name='${name}',price='${price}',discount='${discount}',priceWithDiscount='${priceWithDiscount}',doseInMG='${doseInMG}',mgfdate='${mgfdate}',expiredate='${expiredate}',description='${description}',categoryid='${categoryid}' where id =${id}`
     
     connection.query(statement,(error,data)=>{
         connection.end()

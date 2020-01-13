@@ -11,6 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class Edit_productComponent implements OnInit {
 
+  cat = []
+  categoryid = 0
   name = ''
   price = 0
   discount = 0
@@ -25,7 +27,8 @@ export class Edit_productComponent implements OnInit {
     constructor(
         private service: EditProductService,
         private router: Router,
-        private activatedRoute: ActivatedRoute) {
+        private activatedRoute: ActivatedRoute,
+        private catservice: EditProductService) {
 
             this.id = this.activatedRoute.snapshot.params['id']
 
@@ -53,12 +56,28 @@ export class Edit_productComponent implements OnInit {
             }
          }
 
-    ngOnInit() { }
+    ngOnInit() {
+      this.loadCategories()
+     }
+
+
+
+    loadCategories(){
+      this.catservice.getCategories().subscribe(response =>{
+          if(response['status']=='success')
+          {
+              this.cat = response['data']
+             
+              if(this.cat.length > 0)
+                this.categoryid = this.cat[0].id
+          }
+      })
+  }
 
 
     onUpdate() {
         this.service
-          .edit_Product(this.name, this.price, this.discount, this.priceWithDiscount, this.doseInMG, this.mgfdate, this.expiredate,this.description, this.id)
+          .edit_Product(this.name, this.price, this.discount, this.priceWithDiscount, this.doseInMG, this.mgfdate, this.expiredate,this.description,this.categoryid, this.id)
           .subscribe(response => {
             if (response['status'] == 'success') {
                 alert('product-updated')

@@ -82,13 +82,35 @@
 
 
   <div class="col-md-3">
+
       <div class="form-group">
-        <label for="">Description</label>
-        <input [(ngModel)]="description" type="text" class="form-control">
+        <label for="">Category</label>
+        <select [(ngModel)]="categoryid" class="form-control">
+          <option *ngFor="let c of cat" [value]="c.id">{{c.title}}</option>
+  
+        </select>
       </div>
-    </div>
+    </div> 
 
 </div>
+
+
+
+
+
+<div class="col-md-3"></div>
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Description</label>
+          <textarea [(ngModel)]="description" rows="4" class="form-control"></textarea>
+        </div>
+      </div>
+
+</div>
+
+
 
 <div class="col-md-3"></div>
 

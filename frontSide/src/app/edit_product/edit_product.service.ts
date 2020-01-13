@@ -6,8 +6,9 @@ import { DatePipe } from '@angular/common';
 export class EditProductService {
 
     url = 'http://localhost:4000/login/dashboard/product/edit_product'
+    url1 = 'http://localhost:4000/category'
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient,private http1:HttpClient) { }
     
 
     edit_Product(
@@ -19,6 +20,7 @@ export class EditProductService {
         mgfdate: Date,
         expiredate: Date,
         description: String,
+        categoryid: number,
         id: number
     )
     {
@@ -31,6 +33,7 @@ export class EditProductService {
             mgfdate:mgfdate,
             expiredate:expiredate,
             description:description,
+            categoryid:categoryid,
             id:id
         }
 
@@ -44,5 +47,9 @@ export class EditProductService {
         return this.http.get(this.url + '/' + id)
     }
 
+    getCategories()
+    {
+        return this.http1.get(this.url1)
+    }
 
 }
