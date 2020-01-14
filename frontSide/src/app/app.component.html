@@ -37,7 +37,18 @@
               <li><a href="#3">ayurvedic</a></li>
             </ul>
           </li>
-          <li ><a routerLink="/MRlogin" class="hello" href="#">Login & Signup</a></li>
+
+          
+          <li (click)="onLogin()" *ngIf="!isLoggedIn"><a routerLink="/MRlogin" class="hello" href="#">Login & Signup</a></li>
+          
+          <li *ngIf="isLoggedIn" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User Details <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#1">Profile</a></li>
+              <li><a href="#2">Dashboard</a></li>
+              <li><a (click)="onLogout()" href="#3">Logout</a></li>
+            </ul>
+          </li>
+
           <li ><a class="hello" a href="#">More</a></li>
           <li ><a class="hello" href="#">Cart</a></li>
           <li ><a routerLink="/login" class="hello" href="#">Admin</a></li>

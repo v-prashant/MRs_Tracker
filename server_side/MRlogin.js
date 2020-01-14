@@ -12,16 +12,18 @@ router.post('/', (request, response) => {
     const statement = `
     select * from mrs where email='${email}' and password = '${encryptedPassword}'`
     connection.query(statement, (error, data) => {
-        const data1 = {}
+        const result = {}
         if(data.length != 0 )
         {
-            console.log('hello')
-            data1['status']='success'
-            response.send(data1)
+            result['status'] = 'success'
+            result['data'] = data
+            response.send(result) 
         }
         else
-        {   data1['status']='null'
-            response.send(data1)
+        {   
+            result['status'] = 'error'
+            result['error'] = error   
+            response.send(result)           
         }
         
     })

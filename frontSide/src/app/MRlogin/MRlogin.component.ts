@@ -13,24 +13,39 @@ import { MRloginService } from './MRlogin.service';
 export class MRloginComponent {
     email = ''
     password = ''
+    rememberme = false
+   // isLoggedIn = false
+
+   
 
     constructor(private router: Router,
         private service: MRloginService) { }
 
-
     onlogin()
     {
+        
         this.service.login(this.email,this.password).subscribe((response)=>{
                 
-        
+            
                 console.log(response)
                 if(response['status']=='success')
                 {
-                    alert('hello')
+                   // this.isLoggedIn = true
+                   if(this.rememberme)
+                   {
+                        localStorage['login_status'] = '1'
+                        localStorage['username'] = response['data'][0].username
+                        localStorage['id'] = response['data'][0].id
+                        localStorage['flag'] = '0'
+
+                   }
+                
+                    this.router.navigate(['/MRlogin/home'])
                 }
-                else if(response['status']=='null')
+                else if(response['status']=='error')
                 {
-                    alert('enter the vaild password')
+
+                    alert('invaild email or password')
                 }
 
            })

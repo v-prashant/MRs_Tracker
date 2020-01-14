@@ -27,6 +27,7 @@ import { Edit_productComponent } from './edit_product/edit_product.component';
 import { EditProductService } from './edit_product/edit_product.service';
 import { MRloginComponent } from './MRlogin/MRlogin.component';
 import { MRloginService } from './MRlogin/MRlogin.service';
+import { UserHomeComponent } from './user_home/user_home.component';
 
 
 
@@ -51,7 +52,7 @@ const routes: Route[] = [
   {path: 'login/dashboard/user/edit_user/:id',component: Edit_userComponent },
   {path: 'login/dashboard/product/edit_product/:id',component: Edit_productComponent },
 
-
+  {path: 'MRlogin/home', component: UserHomeComponent, canActivate: [AppComponent]},
 
 
   {path: 'MRlogin', component: MRloginComponent},
@@ -73,7 +74,8 @@ const routes: Route[] = [
     Add_drComponent,
     Edit_userComponent,
     Edit_productComponent,
-    MRloginComponent
+    MRloginComponent,
+    UserHomeComponent
     
   ],  
   imports: [
@@ -91,7 +93,8 @@ const routes: Route[] = [
     AddProductService,
     EditUserService,
     EditProductService,
-    MRloginService
+    MRloginService,
+    AppComponent
     
   ],
   bootstrap: [AppComponent]

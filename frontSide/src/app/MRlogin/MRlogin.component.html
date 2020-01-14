@@ -1,7 +1,4 @@
 
-
-
-
 <div style="background-color:azure" class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
@@ -17,6 +14,14 @@
         <label for="">Password</label>
         <input [(ngModel)]="password" type="text" class="form-control">    
         </div>
+
+        <div class="form-group">
+               <div class="checkbox">
+                   <label>
+                     <input [(ngModel)]="rememberme" type="checkbox"> Remember me ?
+                   </label>
+                 </div>
+           </div>
 
         <div class="form-group">
        <button (click)="onlogin()" class="btn btn-default">Login</button>     
