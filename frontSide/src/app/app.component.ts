@@ -41,6 +41,8 @@ export class AppComponent implements CanActivate {
   {
     this.isLoggedIn = false
     localStorage['login_status'] = '0'
+    localStorage['username'] = null
+    localStorage['id'] = null
   }
 
 }

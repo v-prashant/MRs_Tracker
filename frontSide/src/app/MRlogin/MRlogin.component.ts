@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { MRloginService } from './MRlogin.service';
-
+import * as toastr from 'toastr';
 
 
 @Component({
@@ -23,8 +23,18 @@ export class MRloginComponent {
 
     onlogin()
     {
-        
-        this.service.login(this.email,this.password).subscribe((response)=>{
+        if(this.email.length == 0)
+        {
+            alert('email field can not be empty')
+        }
+        else if(this.password.length == 0)
+        {
+            alert('password can not be empty')
+        }
+        else
+        {
+
+             this.service.login(this.email,this.password).subscribe((response)=>{
                 
             
                 console.log(response)
@@ -49,6 +59,8 @@ export class MRloginComponent {
                 }
 
            })
+
+        }
 
     }
  

@@ -28,12 +28,13 @@ import { EditProductService } from './edit_product/edit_product.service';
 import { MRloginComponent } from './MRlogin/MRlogin.component';
 import { MRloginService } from './MRlogin/MRlogin.service';
 import { UserHomeComponent } from './user_home/user_home.component';
+import { GetProductService } from './user_home/user_home.component.service';
 
 
 
 const routes: Route[] = [
 
-  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+   { path: '', redirectTo: '/MRlogin/home', pathMatch: 'full' },
 
   // the default component
  // { path: '', component: AdminloginComponent },
@@ -94,7 +95,8 @@ const routes: Route[] = [
     EditUserService,
     EditProductService,
     MRloginService,
-    AppComponent
+    AppComponent,
+    GetProductService
     
   ],
   bootstrap: [AppComponent]

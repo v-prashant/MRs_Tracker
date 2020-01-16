@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GetProductService } from './user_home.component.service';
 
 @Component({
     selector: 'userHome',
@@ -8,10 +10,45 @@ import { Component, OnInit } from '@angular/core';
 
 export class UserHomeComponent implements OnInit {
 
+    Allproducts: any[]
+    username: any
 
-    constructor() { 
+    constructor(private router:Router,
+        private productservice:GetProductService,
+        private service:GetProductService) { 
        this.loadflag()
+        
+       if(localStorage['login_status']!='0')
+       {
+        this.username = localStorage['username']
+       }
+       productservice.getproduct().subscribe((response)=>{
+        if(response['status']=='success')
+        {
+            this.Allproducts = response['data']  
+            console.log(this.Allproducts)       
+        }
+        else{
+            alert('error')
+            console.log(response['error'])
+            
+        }
+      })
+         this.loadAllProducts()
     }
+
+  loadAllProducts() {
+    this.service
+      .getAllProducts()
+      .subscribe(response => {
+        if (response['status'] == 'success') {
+          this.Allproducts = response['data']
+        } else {
+          alert('error')
+        }
+      })
+  }
+
 
     loadflag()
     {

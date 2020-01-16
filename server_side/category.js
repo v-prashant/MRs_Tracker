@@ -3,6 +3,7 @@ const utils = require('./utils')
 const express = require('express')
 const router = express.Router()
 
+
 router.get('/',(req,res)=>{
     const connection = db.connect1()
     const statement = `select id,title from category`
@@ -11,6 +12,7 @@ router.get('/',(req,res)=>{
         res.send(utils.createResult(error,data))
     })
 })
+
 
 router.post('/',(req,res)=>{
     const {title,description} = req.body
