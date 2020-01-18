@@ -6,7 +6,22 @@
     color:white
 }
 
-
 .dropdown-toggle{
-    color:white
+    color:white;
 }
+
+a:hover{
+    color:black;
+}
+/* 
+#myid{
+    position: fixed;
+  top: 0;
+  width: 100%
+}
+
+#myid + #page {
+    padding-top: 102px;
+  } */
+
+  

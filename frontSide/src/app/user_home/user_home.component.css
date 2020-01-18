@@ -1,9 +1,20 @@
 
+
 .boxed {
-    /* border: 1px solid green ; */
+    
     font-family: 'Courier New', Courier, monospace;
- }
+
+ } 
+
 /* 
- .del {
-   font
- } */
+.col-md-4{
+ 
+  background-color: gainsboro;
+}  */
+
+
+
+/* 
+h4{
+  background-color: aqua;
+} */
