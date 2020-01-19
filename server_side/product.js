@@ -16,7 +16,6 @@ router.get('/', (request, response) => {
     })
 })
 
-
 router.post('/',upload.single('image'), (request, response) => {
     const file = request.file.filename
     const {name,price,discount,priceWithDiscount,doseInMG,mgfdate,expiredate,description,categoryid} = request.body
@@ -72,5 +71,17 @@ router.put('/edit_product/:id',(request,response)=>{
     })
 })
 
+// to get single result of product by id for product details
+router.get('/:id', (request, response) => {
+    const {id} = request.params
+    const connection = db.connect1()
+    const statement = `select * from products where id='${id}'`
+    connection.query(statement, (error, data) => {
+     
+        
+        response.send(utils.createResult(error, data))  
+        
+    })
+})
 
 module.exports = router 

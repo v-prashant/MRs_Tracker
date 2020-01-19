@@ -25,8 +25,7 @@ export class UserHomeComponent implements OnInit {
        productservice.getproduct().subscribe((response)=>{
         if(response['status']=='success')
         {
-            this.Allproducts = response['data']  
-            console.log(this.Allproducts)       
+            this.Allproducts = response['data']      
         }
         else{
             alert('error')
@@ -61,5 +60,11 @@ export class UserHomeComponent implements OnInit {
     ngOnInit() { 
     
     }
+
+
+  OnSelectProduct(id: number) {
+    this.router.navigate(['/MRlogin/product_details/'+id])
+  }
+
 }
 

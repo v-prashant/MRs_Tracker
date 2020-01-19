@@ -14,6 +14,12 @@ a:hover{
     color:black;
 }
 /* 
+.carousel-inner{
+    height: 350px;
+    width: 750px;
+} */
+
+/* 
 #myid{
     position: fixed;
   top: 0;

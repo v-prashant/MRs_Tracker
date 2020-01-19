@@ -18,7 +18,7 @@
           
           <li (click)="onLogin()" *ngIf="!isLoggedIn"><a routerLink="/MRlogin" class="hello" href="#">Login & Signup</a></li>
           
-          <li *ngIf="isLoggedIn" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User Details <span class="caret"></span></a>
+          <li *ngIf="isLoggedIn" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{username}}<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#1">Profile</a></li>
               <li><a href="#2">Dashboard</a></li>

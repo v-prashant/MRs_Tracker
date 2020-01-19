@@ -29,6 +29,8 @@ import { MRloginComponent } from './MRlogin/MRlogin.component';
 import { MRloginService } from './MRlogin/MRlogin.service';
 import { UserHomeComponent } from './user_home/user_home.component';
 import { GetProductService } from './user_home/user_home.component.service';
+import { ProductDetailsComponent } from './product_details/product_details.component';
+import { ProductDetailsService } from './product_details/product_details.component.service';
 
 
 
@@ -57,6 +59,7 @@ const routes: Route[] = [
 
 
   {path: 'MRlogin', component: MRloginComponent},
+  {path: 'MRlogin/product_details/:id', component: ProductDetailsComponent}
   
 ]
 
@@ -76,7 +79,8 @@ const routes: Route[] = [
     Edit_userComponent,
     Edit_productComponent,
     MRloginComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    ProductDetailsComponent
     
   ],  
   imports: [
@@ -96,7 +100,8 @@ const routes: Route[] = [
     EditProductService,
     MRloginService,
     AppComponent,
-    GetProductService
+    GetProductService,
+    ProductDetailsService
     
   ],
   bootstrap: [AppComponent]

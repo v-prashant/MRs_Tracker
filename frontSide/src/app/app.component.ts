@@ -13,6 +13,7 @@ export class AppComponent implements CanActivate {
 
   title = 'MRTracker';
   isLoggedIn = false
+  username:String
 
   status = localStorage['login_status']
 
@@ -34,6 +35,7 @@ export class AppComponent implements CanActivate {
       if(this.status == '1')
       {
         this.isLoggedIn = true
+        this.username = localStorage['username']
       }
   }
 
