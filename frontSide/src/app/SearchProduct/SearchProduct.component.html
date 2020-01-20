@@ -1,0 +1,57 @@
+
+<br><br>
+<br>
+
+<h3 class="boxed">{{msg}}:-</h3> 
+<div class="col-md-12" *ngFor="let product of SearchArray;let index = index" >
+ 
+<div class="boxed">    
+
+<div class="col-md-2"></div> 
+<div class="row">
+    <div class="col-md-3">
+      
+        <img style="border:1px solid green" src="http://localhost:4000/{{product.image}}" width="250px;" height="300px;"/>
+    </div>
+</div>
+    
+
+<div class="col-md-2"></div>
+<div class="row">
+    <div class="col-md-9">
+      
+     <b>  {{product.name}}  </b> 
+    </div>
+</div>
+  
+
+<div class="col-md-2"></div>
+<div class="row">
+    <div class="col-md-8">
+      
+     <td><font color="red">MRP ₹<del>{{product.price}}</del></font> <font color="#3EA055"> {{product.discount}}% off </font></td>    
+    </div>
+</div>
+
+<div class="col-md-2"></div>
+<div class="row">
+    <div class="col-md-3">
+      
+      <b>  <td>₹{{product.priceWithDiscount}}</td> </b>
+    </div>
+</div>
+
+<div class="col-md-2"></div>
+<div class="row">
+    <div class="col-md-3">
+      
+        <td>
+            <button type="button"   class="btn btn-danger" (click)="OnSelectProduct(product.id)"><b>Show Details</b></button><br><br>
+        </td>
+    </div>
+</div>
+
+</div>
+</div> 
+
+

@@ -14,6 +14,7 @@ export class AppComponent implements CanActivate {
   title = 'MRTracker';
   isLoggedIn = false
   username:String
+  search: String
 
   status = localStorage['login_status']
 
@@ -22,14 +23,12 @@ export class AppComponent implements CanActivate {
     this.loadStatus()
   }
 
-
   canActivate()
   {  
       this.loadStatus()
       return true
   }
  
-
   loadStatus()
   {
       if(this.status == '1')
@@ -45,6 +44,12 @@ export class AppComponent implements CanActivate {
     localStorage['login_status'] = '0'
     localStorage['username'] = null
     localStorage['id'] = null
+  }
+
+  onSearch()
+  {
+    localStorage['searchValue'] = this.search
+    this.router.navigate(['/MRlogin/search'])
   }
 
 }

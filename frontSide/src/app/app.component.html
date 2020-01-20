@@ -9,9 +9,9 @@
           <li ><a class="hello" routerLink="MRlogin/home" href="">Home</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#1">allopathic</a></li>
-              <li><a href="#2">homoeopathy</a></li>
-              <li><a href="#3">ayurvedic</a></li>
+              <li><a routerLink="/MRlogin/allopathic" href="#">allopathic</a></li>
+              <li><a routerLink="/MRlogin/homoeopathy" href="#">homoeopathy</a></li>
+              <li><a routerLink="/MRlogin/ayurvedic" href="#">ayurvedic</a></li>
             </ul>
           </li>
 
@@ -35,9 +35,9 @@
     <a style="margin-left: 180px;margin-top:3px;font-size: medium" class="navbar-brand">@PrashantJBD</a>
 
 
-    <input size="40" style="margin-top: 11px" class="form-control mr-sm-2" type="search" placeholder="Search for product" aria-label="search" >
-    <button style="margin-top: 11px" class="btn btn-info" type="submit">Search</button>
-  </form>
+  <input [(ngModel)]="search" name="search" size="40" style="margin-top: 11px" class="form-control mr-sm-2" type="search" placeholder="Search for product" aria-label="search" >
+   <button (click)="onSearch()" style="margin-top: 11px" class="btn btn-info" type="submit">  <a href="MRlogin/search"> Search </a> </button>
+  </form>                                                            
 
   
 </nav>   

@@ -6,7 +6,10 @@ const routerProduct = require('./product')
 const routerUsers = require('./user')
 const routerDrs = require('./drs')
 const routerMR = require('./MRlogin')
+const routeCategoryAndSearch = require('./categoryAndSearch')
 const app = express()
+
+
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -22,6 +25,7 @@ app.use('/login/dashboard/product',routerProduct)
 app.use('/login/dashboard/user',routerUsers)
 app.use('/login/dashboard/dr',routerDrs)
 app.use('/MRlogin',routerMR)
+app.use('/MRlogin',routeCategoryAndSearch)
 app.use(express.static('images'))
 
 app.listen(4000, '0.0.0.0', () =>{

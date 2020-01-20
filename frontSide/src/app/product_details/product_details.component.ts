@@ -69,8 +69,24 @@ export class ProductDetailsComponent implements OnInit {
      
      OnBack()
      {
-        this.route.navigate(['/MRlogin/home'])
+        if(localStorage['onBack'] == 'allopathic'){
+            this.route.navigate(['/MRlogin/allopathic'])
+        }
+        else if(localStorage['onBack'] == 'ayurvedic'){
+            this.route.navigate(['/MRlogin/ayurvedic'])
+        }
+        else if(localStorage['onBack'] == 'homo'){
+            this.route.navigate(['/MRlogin/homoeopathy'])
+        }
+        else if(localStorage['onBack'] == 'searchProduct'){
+            this.route.navigate(['/MRlogin/search'])
+        }
+        else{
+            this.route.navigate(['/MRlogin/home'])
+        }
+        
      }
 
     ngOnInit() { }
 }
+

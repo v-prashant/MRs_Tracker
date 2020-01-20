@@ -46,6 +46,7 @@ export class UserHomeComponent implements OnInit {
           alert('error')
         }
       })
+      localStorage['onBack'] = 'user'
   }
 
 

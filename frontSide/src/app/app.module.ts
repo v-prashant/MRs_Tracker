@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { FormsModule } from '@angular/forms'
-
 import { AppComponent } from './app.component';
 import { AdminloginComponent } from './Adminlogin/Adminlogin.component';
 import { LoginComponent } from './login/login.component';
-
 import { RouterModule, Route } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Add_userComponent } from './add_user/add_user.component';
@@ -31,6 +28,14 @@ import { UserHomeComponent } from './user_home/user_home.component';
 import { GetProductService } from './user_home/user_home.component.service';
 import { ProductDetailsComponent } from './product_details/product_details.component';
 import { ProductDetailsService } from './product_details/product_details.component.service';
+import { AllopathicComponent } from './allopathic/allopathic.component';
+import { AllopathicService } from './allopathic/allopathic.component.service';
+import { HomoeopathyComponent } from './homoeopathy/homoeopathy.component';
+import { HomoeopathyService } from './homoeopathy/homoeopathy.component.service';
+import { AyurvedicComponent } from './ayurvedic/ayurvedic.component';
+import { AyurvedicService } from './ayurvedic/ayurvedic.component.service';
+import { SearchProductService } from './SearchProduct/SearchProduct.component.service';
+import { SearchProductComponent } from './SearchProduct/SearchProduct.component';
 
 
 
@@ -59,10 +64,15 @@ const routes: Route[] = [
 
 
   {path: 'MRlogin', component: MRloginComponent},
-  {path: 'MRlogin/product_details/:id', component: ProductDetailsComponent}
-  
-]
+  {path: 'MRlogin/product_details/:id', component: ProductDetailsComponent},
 
+  {path: 'MRlogin/allopathic', component: AllopathicComponent},
+  {path: 'MRlogin/homoeopathy', component: HomoeopathyComponent},
+  {path: 'MRlogin/ayurvedic', component: AyurvedicComponent},
+  {path: 'MRlogin/search', component: SearchProductComponent}
+
+
+]
 
 @NgModule({
   declarations: [
@@ -80,7 +90,11 @@ const routes: Route[] = [
     Edit_productComponent,
     MRloginComponent,
     UserHomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    AllopathicComponent,
+    HomoeopathyComponent,
+    AyurvedicComponent,
+    SearchProductComponent
     
   ],  
   imports: [
@@ -101,7 +115,11 @@ const routes: Route[] = [
     MRloginService,
     AppComponent,
     GetProductService,
-    ProductDetailsService
+    ProductDetailsService,
+    AllopathicService,
+    HomoeopathyService,
+    AyurvedicService,
+    SearchProductService,
     
   ],
   bootstrap: [AppComponent]
