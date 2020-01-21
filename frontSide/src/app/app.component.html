@@ -21,13 +21,19 @@
           <li *ngIf="isLoggedIn" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{username}}<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#1">Profile</a></li>
-              <li><a href="#2">Dashboard</a></li>
-              <li><a (click)="onLogout()" href="#3">Logout</a></li>
+              <li><a href="#2">Orders</a></li>
+              <li><a (click)="onLogout()" >Logout</a></li>
             </ul>
           </li>
 
-          <li ><a class="hello" a href="#">More</a></li>
-          <li ><a class="hello" href="#">Cart</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">More <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  >Contact Us</a></li>
+              <li><a  >Give Feedback</a></li>
+              <li><a  >Download App</a></li>
+            </ul>
+          </li>
+          <li ><a routerLink="/MRlogin/cart" class="hello" >Cart</a></li>
           <li ><a routerLink="/login" class="hello" href="#">Admin</a></li>
         </ul>
      

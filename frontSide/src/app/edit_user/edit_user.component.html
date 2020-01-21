@@ -1,4 +1,5 @@
 
+<br><br>
 <h1>Edit MR's Details</h1>
 
 
@@ -79,6 +80,18 @@
       <input [(ngModel)]="password" type="text" class="form-control">
     </div>
   </div>
+
+
+  <div class="col-md-3">
+      <div class="form-group">
+          <label for="">Status</label>
+          <select [(ngModel)]="exist" class="form-control">
+            <option  [value]=1>User</option>
+            <option  [value]=2>MR</option>
+            <option  [value]=0>Blocked</option>
+          </select>
+      </div>
+    </div>
 
 </div>
 

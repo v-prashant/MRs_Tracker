@@ -29,6 +29,7 @@ export class AppComponent implements CanActivate {
       return true
   }
  
+  
   loadStatus()
   {
       if(this.status == '1')
@@ -38,12 +39,18 @@ export class AppComponent implements CanActivate {
       }
   }
 
+
   onLogout()
   {
-    this.isLoggedIn = false
-    localStorage['login_status'] = '0'
-    localStorage['username'] = null
-    localStorage['id'] = null
+    if(confirm('Are you want to log out'))
+    {
+      this.isLoggedIn = false
+      localStorage['login_status'] = '0'
+      localStorage['username'] = null
+      localStorage['id'] = null
+
+      this.router.navigate(['/MRlogin'])
+    }
   }
 
   onSearch()

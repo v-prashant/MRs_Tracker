@@ -1,0 +1,53 @@
+
+<br><br>
+
+<div class="color">
+<h3 class="boxed">{{msg}}:-</h3>
+
+<div class="row" *ngFor="let product of Cart">
+      
+<div class="boxed">    
+
+        <div class="col-md-1"></div> 
+        <div class="row">
+            <div class="col-md-2">
+              
+                <img style="border:1px solid green" src="http://localhost:4000/{{product.image}}" width="150px;" height="200px;"/><br><br>
+            </div>
+
+        
+            <div class="row">
+                <div class="col-md-3"> 
+                 <b>  {{product.name}}  </b> <br><br>
+                 <b> <td>Quantity:- <font color="blue"> {{product.Quantity}}</font></td> </b> <br>
+                 <b> <td>You saved:- <font color="blue"> ₹{{product.totalDiscount}}/-</font></td> </b> <br>
+                <b> <td>Amount:- <font color="blue"> ₹{{product.totalAmount}}/-</font></td> </b>
+                  <br>
+                <button (click)="onEdit(product.ProductID)" type="button" class="btn btn-info">Edit</button>
+                </div>
+
+            </div>          
+
+        </div>
+       
+        
+  </div>
+    
+</div>
+
+
+<div *ngIf = !empty>
+
+           <div class="hello"> <b> <td >You Total saved:- <font color="blue"> ₹{{TotalSaved}}/-</font></td> </b> </div> 
+         <div class="hello">   <b> <td>Your Total Amount:- <font color="blue"> ₹{{TotalAmountOfProduct}}/-</font></td> </b> </div> 
+     <div class="hello">  <button style="margin-top: 7px;margin-left: 7px" type="button" class="btn btn-success" (click)="onOrderNow()"><b>Place order</b></button> </div> <br><br>
+  
+       
+</div>
+       
+</div>
+
+
+
+
+      

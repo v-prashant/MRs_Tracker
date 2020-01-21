@@ -5,12 +5,12 @@ const cryptoJs = require('crypto-js')
 
 const router = express.Router()
  
+
 router.post('/', (request, response) => {
     const {email,password} = request.body
-    const encryptedPassword = '' + cryptoJs.MD5(password)
     const connection = db.connect1()
     const statement = `
-    select * from mrs where email='${email}' and password = '${encryptedPassword}'`
+    select * from mrs where email='${email}' and password = '${password}'`
     connection.query(statement, (error, data) => {
         const result = {}
         if(data.length != 0 )

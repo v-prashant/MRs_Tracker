@@ -39,12 +39,14 @@ router.get('/edit_user/:id', (request, response) => {
 })
 
 
+// exist == 1 => user
+// exist == 2 => mr
+// exist == 0 -> user is blocked 
 router.post('/', (request, response) => {
     const {username,firstname,lastname,joindate,phoneno,email,password} = request.body
-    const encryptedPassword = '' + cryptoJs.MD5(password)
     const connection = db.connect1()
     const statement = `
-    insert into mrs (username, firstname, lastname,joindate, phoneno, email, password) values('${username}', '${firstname}', '${lastname}','${joindate}', '${phoneno}', '${email}', '${encryptedPassword}' )`
+    insert into mrs (username, firstname, lastname,joindate, phoneno, email, password, exist) values('${username}', '${firstname}', '${lastname}','${joindate}', '${phoneno}', '${email}', '${password}',1 )`
     connection.query(statement, (error, data) => {
         connection.end()
         response.send(utils.createResult(error, data))
@@ -65,10 +67,10 @@ router.delete('/:id', (request, response) => {
 
 router.put('/edit_user/:id',(request,response)=>{
     const {id} = request.params
-    const {username,firstname,lastname,joindate,phoneno,email,password} = request.body
+    const {username,firstname,lastname,joindate,phoneno,email,password,exist} = request.body
     const connection = db.connect1()
 
-    const statement = `update mrs set username='${username}',firstname='${firstname}',lastname='${lastname}',joindate='${joindate}',phoneno='${phoneno}',email='${email}',password='${password}' where id =${id}`
+    const statement = `update mrs set username='${username}',firstname='${firstname}',lastname='${lastname}',joindate='${joindate}',phoneno='${phoneno}',email='${email}',password='${password}', exist=${exist} where id =${id}`
     
     connection.query(statement,(error,data)=>{
         connection.end()

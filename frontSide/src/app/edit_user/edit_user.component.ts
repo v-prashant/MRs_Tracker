@@ -19,6 +19,7 @@ export class Edit_userComponent implements OnInit {
   email = ''
   password = ''
   id = 0
+  exist = 0;
 
     constructor(private movieService: EditUserService,
         private service: EditUserService,
@@ -55,7 +56,7 @@ export class Edit_userComponent implements OnInit {
 
     onUpdate() {
         this.movieService
-          .edit_movie(this.username, this.firstname, this.lastname, this.joindate, this.phoneno, this.email, this.password, this.id)
+          .edit_movie(this.username, this.firstname, this.lastname, this.joindate, this.phoneno, this.email, this.password, this.id,this.exist)
           .subscribe(response => {
             if (response['status'] == 'success') {
                 alert('user-updated')

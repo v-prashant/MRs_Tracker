@@ -36,6 +36,10 @@ import { AyurvedicComponent } from './ayurvedic/ayurvedic.component';
 import { AyurvedicService } from './ayurvedic/ayurvedic.component.service';
 import { SearchProductService } from './SearchProduct/SearchProduct.component.service';
 import { SearchProductComponent } from './SearchProduct/SearchProduct.component';
+import { CartComponent } from './ Cart/Cart.component';
+import { CartService } from './ Cart/Cart.component.service';
+import { MRRegisterComponent } from './MRRegister/MRRegister.component';
+import { MRRegisterService } from './MRRegister/MRRegister.service';
 
 
 
@@ -69,7 +73,9 @@ const routes: Route[] = [
   {path: 'MRlogin/allopathic', component: AllopathicComponent},
   {path: 'MRlogin/homoeopathy', component: HomoeopathyComponent},
   {path: 'MRlogin/ayurvedic', component: AyurvedicComponent},
-  {path: 'MRlogin/search', component: SearchProductComponent}
+  {path: 'MRlogin/search', component: SearchProductComponent},
+  {path: 'MRlogin/cart', component: CartComponent},
+  {path: 'MRregister', component: MRRegisterComponent}
 
 
 ]
@@ -94,7 +100,9 @@ const routes: Route[] = [
     AllopathicComponent,
     HomoeopathyComponent,
     AyurvedicComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    CartComponent,
+    MRRegisterComponent
     
   ],  
   imports: [
@@ -120,6 +128,8 @@ const routes: Route[] = [
     HomoeopathyService,
     AyurvedicService,
     SearchProductService,
+    CartService,
+    MRRegisterService
     
   ],
   bootstrap: [AppComponent]

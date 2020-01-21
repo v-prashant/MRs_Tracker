@@ -8,23 +8,25 @@ import { ActivatedRoute, Router } from '@angular/router';
     styleUrls: ['./product_details.component.css']
 })
 
-
-
 export class ProductDetailsComponent implements OnInit {
     product: any
     count: number = 1
     rate: number
     temp: number
+    id: number
+    totalDiscount: number
+    MRid:number
 
     constructor(private service:ProductDetailsService,
         private activateRoute:ActivatedRoute,
+        private cartService: ProductDetailsService,
         private route:Router) {
       
-        const id = this.activateRoute.snapshot.params['id']
+        this.id = this.activateRoute.snapshot.params['id']
       
-        if(id)
+        if(this.id)
         {
-            this.service.getProduct(id).subscribe(response => {
+            this.service.getProduct(this.id).subscribe(response => {
                 if(response['status']=='success')
                 {
                     this.product = response['data'][0]
@@ -57,9 +59,29 @@ export class ProductDetailsComponent implements OnInit {
         }
      }
 
-     OnAddToCart()
+     onAddToCart()
      {
+         if(localStorage['login_status'] == '0'){
+            alert('You need to login first')
+            this.route.navigate(['/MRlogin'])
+         }
+         else
+         {
+             if(confirm('Do You want to add itmes'))
+             {
+                this.MRid = localStorage['id']
+                this.totalDiscount = (this.product.price * this.count) - this.rate
 
+                this.cartService.postInCart(this.count,this.rate,this.totalDiscount,this.MRid,this.id)
+               .subscribe(response =>{
+                if(response['status'] == 'success'){
+                    alert('items added in your cart')
+                  }
+          })
+
+         }
+
+        }
      }
 
      OnOrderNow()

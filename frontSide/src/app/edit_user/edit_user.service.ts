@@ -17,7 +17,8 @@ export class EditUserService {
         phoneno: String,
         email: String,
         password: String,
-        id: number
+        id: number,
+        exist:number
     )
     {
         const body={
@@ -28,7 +29,8 @@ export class EditUserService {
             phoneno:phoneno,
             email:email,
             password:password,
-            id:id
+            id:id,
+            exist:exist
         }
 
 
