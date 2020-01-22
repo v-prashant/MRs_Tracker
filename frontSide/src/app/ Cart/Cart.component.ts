@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from './Cart.component.service';
-import { empty } from 'rxjs';
 
 @Component({
     selector: 'product_details',
     templateUrl: './Cart.component.html',
     styleUrls: ['./Cart.component.css']
 })
+
 
 export class CartComponent implements OnInit {
 
@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
         this.service.getCart(this.id).subscribe(response =>{
             if(response['status'] == 'success'){
                 this.Cart = response['data']
+               
                 //TO GET TOTAL MONEY AND SAVING
                 
                 if(this.Cart.length == 0){
@@ -46,9 +47,8 @@ export class CartComponent implements OnInit {
                 {
                     this.TotalAmountOfProduct = this.TotalAmountOfProduct + this.Cart[i].totalAmount
                     this.TotalSaved = this.TotalSaved + this.Cart[i].totalDiscount
-                    
+                   
                 } 
-
 
 
             }
@@ -58,9 +58,15 @@ export class CartComponent implements OnInit {
         })
     }
 
-    onEdit(id:number) {
-        this.route.navigate(['/MRlogin/product_details/'+id])
+    onEdit(id:number,tableid:number,quantity:number) {
+        localStorage['orderDetailsTableID'] = tableid
+        localStorage['Quantity'] = quantity
+        this.route.navigate(['/MRlogin/cartEdit/'+id])
       }
+
+    onOrderPlace(){
+            this.route.navigate(['/MRlogin/cart/placeorder'])   
+    }
 
     ngOnInit() { 
 
@@ -69,5 +75,7 @@ export class CartComponent implements OnInit {
             this.route.navigate(['/MRlogin'])
         }
     }
+
+    
 }
 

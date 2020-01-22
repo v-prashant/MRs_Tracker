@@ -1,0 +1,136 @@
+
+<br><br><br>
+
+<h1>Delivery Information </h1>
+
+<div class="col-md-3"></div>
+<div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">Dr Fullname</label>
+                  <input [(ngModel)]="fullname" type="text" class="form-control">
+                </div>
+              </div>
+               
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">PhoneNo</label>
+                  <input [(ngModel)]="phoneno" type="number" class="form-control">
+                </div>
+              </div>
+                       
+</div>
+
+<div class="col-md-3"></div>
+<div class="row">
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">Order Date</label>
+                  <input [(ngModel)]="OrderDate" type="date" class="form-control">
+                </div>
+              </div>
+                       
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">Delivery Date</label>
+                  <input [(ngModel)]="deliveryDate" type="date" class="form-control">
+            
+                </div>
+              </div>
+                       
+ </div>
+            
+<div class="col-md-3"></div>
+<div class="row">
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <label for="">Payment Mode</label>
+                    <select [(ngModel)]="PaymentMode"  class="form-control">
+                      <option  [value]= 1 >Cash</option>
+                        <option  [value]= 2 >Cheque</option>
+                      <option  [value]= 3 >Upi</option>
+                  </select>       
+                </div>
+                </div>
+            
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">State</label>
+                  <input [(ngModel)]="state" type="text" class="form-control">
+                </div>
+              </div>
+            
+  </div>
+            
+  <div class="col-md-3"></div>   
+     <div class="row">
+    
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">City</label>
+                  <input [(ngModel)]="city" type="text" class="form-control">
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="">Pincode</label>
+                    <input [(ngModel)]="pincode" type="number" class="form-control">
+                  </div>
+                </div>
+            
+    </div>
+            
+
+ <div class="col-md-3"></div>   
+    <div class="row">
+   
+             <div class="col-md-3">
+                 <div class="form-group">
+                   <label for="">Address</label>
+                   <textarea [(ngModel)]="address" name="address" rows="4" class="form-control"></textarea>
+                 </div>
+               </div>
+   
+   </div>
+           
+
+
+            <div class="col-md-3"></div>
+            
+            <div class="row">
+              <div class="col-md-3">
+                <button (click)="onadd()" class="btn btn-success">Confirm Order</button>
+                <a style="margin-left: 10px;" routerLink="/MRlogin/cart" class="btn btn-danger">Cancel</a>
+              </div>
+            </div>
+
+<!--             
+<div class="form-group">
+       Username
+       <input [(ngModel)]="username" type="text" name="username"> <br> <br>
+       FirstName
+       <input [(ngModel)]="firstname" type="text" name="firstname"> <br> <br>
+       LastName
+       <input [(ngModel)]="lastname" type="text" name="lastname"> <br> <br>
+       Joindate
+       <input [(ngModel)]="joindate" type="text" name="joindate"> <br> <br>
+       Phone No
+       <input [(ngModel)]="phoneno" type="text" name="phoneno"> <br> <br>
+       Email
+       <input [(ngModel)]="email" type="email" name="email"> <br> <br>
+       Password
+       <input [(ngModel)]="password" type="password" name="password">  <br>
+
+
+       <button (click) = "onadd()" class="btn btn-success" style="margin-right: 5px;" >Add</button>  <button (click)="back()" class="btn btn-danger" >Cancel</button>
+
+       
+       
+</div>   -->
+
+
+

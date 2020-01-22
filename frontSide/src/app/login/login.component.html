@@ -22,8 +22,6 @@
 </tr>
 </thead>
 
-
-
 <tbody>
     <tr *ngFor="let user of users;let index = index">
         <td>{{index+1}}</td>
@@ -37,8 +35,8 @@
         <td>{{user.exist}}</td>
         <td ><button (click)="ondelete(user.id)" class="btn btn-danger">   <i class="glyphicon glyphicon-trash"></i></button>
         <button (click)="onUserSelect(user.id)" class = "btn btn-warning" style="margin-left: 10px;"><i class="glyphicon glyphicon-pencil"></i></button>
-        <button class = "btn btn-info" style="margin-top: 10px;margin-left: 10px;">ShowOrders</button>
-        <button class = "btn btn-info" style="margin-top: 10px;">Track Location </button>
+        <button (click)="onOrderList(user.id)" class = "btn btn-info" style="margin-top: 10px;margin-left: 10px;"> <a href="/MRlogin/dashboard/MRorders/{{user.id}}"> ShowOrders </a> </button>
+        <button  class = "btn btn-info" style="margin-top: 10px;">Track Location </button>
     </td>
     </tr>
 

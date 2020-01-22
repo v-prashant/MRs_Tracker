@@ -68,5 +68,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/login/dashboard'])
     }
 
+    onOrderList(id:number){
+        this.router.navigate(['/MRlogin/dashboard/MRorders'+'/'+id])
+    }
+
     ngOnInit() { }
 }
+

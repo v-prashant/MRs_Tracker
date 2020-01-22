@@ -23,14 +23,13 @@
                  <b> <td>You saved:- <font color="blue"> ₹{{product.totalDiscount}}/-</font></td> </b> <br>
                 <b> <td>Amount:- <font color="blue"> ₹{{product.totalAmount}}/-</font></td> </b>
                   <br>
-                <button (click)="onEdit(product.ProductID)" type="button" class="btn btn-info">Edit</button>
+                <button (click)="onEdit(product.ProductID,product.id,product.Quantity)" type="button" class="btn btn-info">Edit</button>
                 </div>
 
             </div>          
 
         </div>
-       
-        
+              
   </div>
     
 </div>
@@ -40,7 +39,7 @@
 
            <div class="hello"> <b> <td >You Total saved:- <font color="blue"> ₹{{TotalSaved}}/-</font></td> </b> </div> 
          <div class="hello">   <b> <td>Your Total Amount:- <font color="blue"> ₹{{TotalAmountOfProduct}}/-</font></td> </b> </div> 
-     <div class="hello">  <button style="margin-top: 7px;margin-left: 7px" type="button" class="btn btn-success" (click)="onOrderNow()"><b>Place order</b></button> </div> <br><br>
+     <div class="hello">  <button style="margin-top: 7px;margin-left: 7px" type="button" class="btn btn-success" (click)="onOrderPlace()"><b>Place order</b></button> </div> <br><br>
   
        
 </div>

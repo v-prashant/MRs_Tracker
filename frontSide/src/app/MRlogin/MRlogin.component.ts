@@ -40,15 +40,13 @@ export class MRloginComponent {
                 console.log(response)
                 if(response['status']=='success')
                 {
-                   // this.isLoggedIn = true
-                   if(this.rememberme)
-                   {
+                
                         localStorage['login_status'] = '1'
                         localStorage['username'] = response['data'][0].username
                         localStorage['id'] = response['data'][0].id
                         localStorage['flag'] = '0'
 
-                   }
+                   
                 
                     this.router.navigate(['/MRlogin/home'])
                 }

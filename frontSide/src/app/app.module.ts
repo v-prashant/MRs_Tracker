@@ -40,6 +40,16 @@ import { CartComponent } from './ Cart/Cart.component';
 import { CartService } from './ Cart/Cart.component.service';
 import { MRRegisterComponent } from './MRRegister/MRRegister.component';
 import { MRRegisterService } from './MRRegister/MRRegister.service';
+import { CartProductDetailsComponent } from './CartProductDetails/CartProductDetails.component';
+import { CartProductDetailsService } from './CartProductDetails/CartProductDetails.component.service';
+import { UserOrdersComponent } from './UserOrders/UserOrders.component';
+import { UserOrdersService } from './UserOrders/UserOrders.component.service';
+import { UserOrderListComponent } from './UserOrderList/UserOrderList.component';
+import { UserOrderListService } from './UserOrderList/UserOrderList.service';
+import { AllOrderListService } from './AllOrderList/AllOrderList.service';
+import { AllOrderListComponent } from './AllOrderList/AllOrderList.component';
+import { MROrderListComponent } from './MRorders/MRorders.component';
+import { MRordersListService } from './MRorders/MRorders.service';
 
 
 
@@ -75,7 +85,12 @@ const routes: Route[] = [
   {path: 'MRlogin/ayurvedic', component: AyurvedicComponent},
   {path: 'MRlogin/search', component: SearchProductComponent},
   {path: 'MRlogin/cart', component: CartComponent},
-  {path: 'MRregister', component: MRRegisterComponent}
+  {path: 'MRregister', component: MRRegisterComponent},
+  {path: 'MRlogin/cartEdit/:id', component: CartProductDetailsComponent},
+  {path: 'MRlogin/cart/placeorder', component: UserOrdersComponent},
+  {path: 'MRlogin/orders', component: UserOrderListComponent},
+  {path: 'MRlogin/dashboard/orders', component: AllOrderListComponent},
+  {path: 'MRlogin/dashboard/MRorders/:id', component: MROrderListComponent}
 
 
 ]
@@ -102,7 +117,12 @@ const routes: Route[] = [
     AyurvedicComponent,
     SearchProductComponent,
     CartComponent,
-    MRRegisterComponent
+    MRRegisterComponent,
+    CartProductDetailsComponent,
+    UserOrdersComponent,
+    UserOrderListComponent,
+    AllOrderListComponent,
+    MROrderListComponent
     
   ],  
   imports: [
@@ -129,7 +149,12 @@ const routes: Route[] = [
     AyurvedicService,
     SearchProductService,
     CartService,
-    MRRegisterService
+    MRRegisterService,
+    CartProductDetailsService,
+    UserOrdersService,
+    UserOrderListService,
+    AllOrderListService,
+    MRordersListService
     
   ],
   bootstrap: [AppComponent]

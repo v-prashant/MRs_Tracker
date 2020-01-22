@@ -38,7 +38,6 @@ router.get('/edit_user/:id', (request, response) => {
     })
 })
 
-
 // exist == 1 => user
 // exist == 2 => mr
 // exist == 0 -> user is blocked 

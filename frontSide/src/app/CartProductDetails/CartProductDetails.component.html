@@ -1,0 +1,87 @@
+
+<br><br>
+
+<div class="color">
+<h3 class="boxed">Product Details:-</h3>
+
+
+<div class="row" *ngIf="product != undefined">
+
+        
+<div class="boxed">    
+
+        <div class="col-md-1"></div> 
+        <div class="row">
+            <div class="col-md-3">
+              
+                <img style="border:1px solid green" src="http://localhost:4000/{{product.image}}" width="250px;" height="300px;"/>
+            </div>
+
+        
+            <div class="row">
+
+                <div class="col-md-3"> 
+                 <b>  {{product.name}}  </b> <br>
+                 <td><font color="red">MRP ₹<del>{{product.price}}</del></font> <font color="#3EA055"> {{product.discount}}% off </font></td>
+                 <br><br>
+
+                 <span>   <button type="button" class="btn btn-success" (click)="OnDecrement()"><b> - </b></button>  </span>
+                 <b class="stepper"> {{count}} </b>
+                 <span>  <button type="button" class="btn btn-success" (click)="OnIncrement()"><b>+</b></button> </span>
+                 <br>
+                 <h4 style="margin-top: 13px;margin-left: 25px" class="stepper">₹{{rate}}</h4>
+
+                </div>
+
+            </div>
+
+           
+
+        </div>
+            
+        
+        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="col-md-3"> 
+             <b>  {{product.name}}  </b> 
+            </div>
+
+        </div>
+          
+        
+        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="col-md-8">
+              
+             <td><font color="red">MRP ₹<del>{{product.price}}</del></font> <font color="#3EA055"> {{product.discount}}% off </font></td>    
+            </div>
+        </div>
+        
+        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="col-md-3">  
+              <b>  <td>₹{{product.priceWithDiscount}}</td> </b>
+            </div>
+        </div>
+    
+        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="col-md-3">
+                <button style="margin-top: 7px" type="button" class="btn btn-success" (click)="onAddToCart()"><b>Save</b></button>    <br><br>
+            </div>
+        </div>
+        
+        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="col-md-5">
+             <h3>Information about {{product.name}}:-</h3>
+             <td>{{product.description}}</td> 
+            </div>
+        </div>
+
+        </div>
+    
+</div>
+
+</div>
+      
