@@ -42,7 +42,7 @@ export class AppComponent implements CanActivate {
 
   onLogout()
   {
-    if(confirm('Are you want to log out'))
+    if(confirm('Are you sure to log out'))
     {
       this.isLoggedIn = false
       localStorage['login_status'] = '0'
@@ -56,6 +56,7 @@ export class AppComponent implements CanActivate {
   onSearch()
   {
     localStorage['searchValue'] = this.search
+
     this.router.navigate(['/MRlogin/search'])
   }
 

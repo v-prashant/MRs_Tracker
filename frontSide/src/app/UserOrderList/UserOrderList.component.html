@@ -19,7 +19,7 @@
     <th>Delivery Date</th>
     <th>Full Address</th>
     <th>Delivery Status</th>
-    <th>Action</th>
+    
    
 </tr>
 </thead>
@@ -46,8 +46,8 @@
 
         <td *ngIf="!isexpire(pr)">  <font color="red"> In Progress  </font>  </td>  
 
-        <td ><button (click)="ondelete(pr.id)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button>
-        </td>
+        <!-- <td ><button (click)="ondelete(pr.id)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button>
+        </td> -->
     </tr>
 
 
