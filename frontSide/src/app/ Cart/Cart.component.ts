@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
             }
         })
     }
-
+    
     onEdit(id:number,tableid:number,quantity:number) {
         localStorage['orderDetailsTableID'] = tableid
         localStorage['Quantity'] = quantity
@@ -70,7 +70,7 @@ export class CartComponent implements OnInit {
 
     ngOnInit() { 
 
-        if(localStorage['login_status'] == '0'){
+        if(localStorage['login_status'] != '1'){
             alert('you are not logged in')
             this.route.navigate(['/MRlogin'])
         }
